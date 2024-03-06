@@ -1,0 +1,9 @@
+.idea/
+vendor/
+log/
+cookies/
+export/
+*.json
+*.txt
+*.csv
+*.log

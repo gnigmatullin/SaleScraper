@@ -1,0 +1,42 @@
+# Runwaysale services
+0 23 * * * cd /var/www/html/runwaysale/lib/ && php export.php > export.txt
+50 23 * * * cd /var/www/html/runwaysale/lib/ && php clear_db.php > clear_db.txt
+
+# Runwaysale scrapers slow
+0 0 * * * cd /var/www/html/runwaysale/6pm/ && php monitor.php > monitor.txt
+0 4 * * * cd /var/www/html/runwaysale/ozsale/ && php ozsale.php > ozasale.txt
+0 8 * * * cd /var/www/html/runwaysale/sportpursuit/ && php monitor.php > monitor.txt
+0 12 * * * cd /var/www/html/runwaysale/superbalist/ && php monitor.php > monitor.txt
+0 16 * * * cd /var/www/html/runwaysale/zando/ && php monitor.php > monitor.txt
+0 17 * * * cd /var/www/html/runwaysale/brandalley/ && php brandalley.php > brandalley.txt
+
+# Runwaysale scrapers average
+0 7 * * * cd /var/www/html/runwaysale/cocosa/ && php monitor.php > monitor.txt
+0 9 * * * cd /var/www/html/runwaysale/cottonon/ && php monitor.php > monitor.txt
+0 11 * * * cd /var/www/html/runwaysale/mysale/ && php monitor.php > monitor.txt
+0 13 * * * cd /var/www/html/runwaysale/mrp/ && php mrp.php > mrp.txt
+0 15 * * * cd /var/www/html/runwaysale/perfumeuae/ && php perfumeuae.php > perfumeuae.txt
+
+# Runwaysale scrapers fast
+30 0 * * * cd /var/www/html/runwaysale/brandsdistribution/ && php monitor.php > monitor.txt
+30 1 * * * cd /var/www/html/runwaysale/capestorm/ && php capestorm.php > capestorm.txt
+30 2 * * * cd /var/www/html/runwaysale/capeunionmart/ && php capeunionmart.php > capeunionmart.txt
+30 3 * * * cd /var/www/html/runwaysale/fashionsouq/ && php monitor.php > monitor.txt
+30 4 * * * cd /var/www/html/runwaysale/firstascent/ && php firstascent.php > firstascent.txt
+30 5 * * * cd /var/www/html/runwaysale/forevernew/ && php monitor.php > monitor.txt
+30 6 * * * cd /var/www/html/runwaysale/greencross/ && php greencross.php > greencross.txt
+30 7 * * * cd /var/www/html/runwaysale/holsterfashion/ && php holsterfashion.php > holsterfashion.txt
+30 8 * * * cd /var/www/html/runwaysale/hushpuppies/ && php hushpuppies.php > hushpuppies.txt
+30 9 * * * cd /var/www/html/runwaysale/planet54/ && php planet54.php > planet54.txt
+30 10 * * * cd /var/www/html/runwaysale/timberland/ && php timberland.php > timberland.txt
+30 11 * * * cd /var/www/html/runwaysale/venteprivee/ && php venteprivee.php > venteprivee.txt
+
+# Runwaysale scrapers every hour
+0 * * * * cd /var/www/html/runwaysale/onedayonly/ && php onedayonly.php > onedayonly.txt
+
+# Runwaysale googlesheet scrapers
+10 * * * * cd /var/www/html/runwaysale/onedayonly/ && php onedayonly_backup.php > onedayonly_backup.txt
+50 23 * * * cd /var/www/html/runwaysale/onedayonly/ && php summary.php > summary.txt
+0 0 * * * cd /var/www/html/runwaysale/superbalist/ && php superbalist_backup.php > superbalist_backup.txt
+50 23 * * * cd /var/www/html/runwaysale/superbalist/ && php summary.php > summary.txt
+0 0 * * * cd /var/www/html/runwaysale/forevernew/ && php forevernew_backup.php > forevernew_backup.txt
